@@ -2,17 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Characters = ({ characters }) => {
-  const characterElements = characters.map(character => {
-    return (
-      <li key={character.id}>
-        {character.id} - {character.name}
-      </li>
-    );
-  });
+  // const characterElements = characters.map(character => {
+  //   return (
+  //     <li key={character.id}>
+  //       <img src={character.image} />
+  //       {character.id} - {character.name}
+  //     </li>
+  //   );
+  // });
 
   return (
     <ul>
-      {characterElements}
+      {/* {characterElements} */}
     </ul>
   );
 };
