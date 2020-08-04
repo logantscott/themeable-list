@@ -1,19 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useCharacters } from '../../hooks/appContext';
+import styles from './Characters.css';
 
-const Characters = ({ characters }) => {
-  // const characterElements = characters.map(character => {
-  //   return (
-  //     <li key={character.id}>
-  //       <img src={character.image} />
-  //       {character.id} - {character.name}
-  //     </li>
-  //   );
-  // });
+const Characters = () => {
+  const characters = useCharacters();
+  if(characters.length === 0) return <h1>Loading...</h1>;
+
+  const characterElements = characters.map(character => {
+    return (
+      <li key={character.id}>
+        <figure>
+          <img src={character.image} />
+          <figcaption>{character.name} - {character.id}</figcaption>
+        </figure>
+      </li>
+    );
+  });
 
   return (
-    <ul>
-      {/* {characterElements} */}
+    <ul className={styles.Characters}>
+      {characterElements}
     </ul>
   );
 };

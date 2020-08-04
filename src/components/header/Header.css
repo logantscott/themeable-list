@@ -1,0 +1,10 @@
+.Header {
+  span {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  span:hover {
+    background: #ccc;
+    transition: .2s;
+  }
+}
