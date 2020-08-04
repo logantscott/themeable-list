@@ -1,10 +1,10 @@
 .Header {
   span {
-    padding: 10px 20px;
+    padding: 3px 20px;
     cursor: pointer;
   }
   span:hover {
-    background: #ccc;
+    background: #777;
     transition: .2s;
   }
 }

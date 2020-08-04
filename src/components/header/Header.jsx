@@ -5,6 +5,7 @@ import { useTheme, useDispatch } from '../../hooks/appContext';
 const Header = () => {
   const theme = useTheme();
   const dispatch = useDispatch();
+  console.log(theme, theme === 'light');
 
   const handleLight = () => {
     // console.log('light');
@@ -25,8 +26,9 @@ const Header = () => {
     <header className={styles.Header}>
       <h1>Avatar API!</h1>
       <div>
-        <span onClick={handleLight}>Light</span>
-        <span onClick={handleDark}>Dark</span>
+        <strong>Theme:&nbsp;&nbsp;</strong>
+        <span style={theme === 'light' ? { 'border': '2px solid black' } : { 'borderBottom': 'none' }} onClick={handleLight}>Light</span>
+        <span style={theme === 'dark' ? { 'border': '2px solid white', 'fontWeight': 'bold' } : { 'borderBottom': 'none' }} onClick={handleDark}>Dark</span>
       </div>
       <hr />
     </header>
