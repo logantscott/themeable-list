@@ -16,3 +16,13 @@ export const useDispatch = () => {
   const { dispatch } = useContext(AppContext);
   return dispatch;
 };
+
+export const usePage = () => {
+  const { state } = useContext(AppContext);
+  return state.page;
+};
+
+export const useCurrentPage = () => {
+  const { state } = useContext(AppContext);
+  return state.currentPage;
+};

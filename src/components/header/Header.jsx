@@ -7,17 +7,17 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const handleLight = () => {
-    console.log('light');
+    // console.log('light');
     dispatch({ type: 'LIGHT_THEME' });
   };
 
   const handleDark = () => {
-    console.log('dark');
+    // console.log('dark');
     dispatch({ type: 'DARK_THEME' });
   };
 
   useEffect(() => {
-    console.log('theme: ', theme);
+    // console.log('theme: ', theme);
     document.body.style = `background-color: var(--${theme}-bg-color); color: var(--${theme}-font-color)`;
   }, [theme]);
 

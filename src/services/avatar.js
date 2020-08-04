@@ -5,6 +5,5 @@ export const fetchCharacters = (page = 1, perPage = 20) => {
       id: character._id,
       name: character.name,
       image: character.photoUrl
-    })))
-    .finally((res) => console.log(res));
+    })));
 };
