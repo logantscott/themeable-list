@@ -1,14 +1,21 @@
 import React from 'react';
-import Characters from '../List/Characters';
+import CharactersContainer from '../../containers/Characters';
 import Header from '../header/Header';
-import Pagination from '../pagination/Pagination';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 
 export default function App() {
   return (
     <>
-      <Header />
-      <Pagination />
-      <Characters />
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/" component={CharactersContainer} />
+        </Switch>
+      </Router>
     </>
   );
 }

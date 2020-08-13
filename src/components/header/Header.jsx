@@ -5,20 +5,18 @@ import { useTheme, useDispatch } from '../../hooks/appContext';
 const Header = () => {
   const theme = useTheme();
   const dispatch = useDispatch();
-  console.log(theme, theme === 'light');
 
   const handleLight = () => {
-    // console.log('light');
+    if(theme === 'light') return;
     dispatch({ type: 'LIGHT_THEME' });
   };
 
   const handleDark = () => {
-    // console.log('dark');
+    if(theme === 'dark') return;
     dispatch({ type: 'DARK_THEME' });
   };
 
   useEffect(() => {
-    // console.log('theme: ', theme);
     document.body.style = `background-color: var(--${theme}-bg-color); color: var(--${theme}-font-color)`;
   }, [theme]);
 
