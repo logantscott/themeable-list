@@ -1,17 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useCharacters } from '../../hooks/appContext';
+import styles from './Characters.css';
 
-const Characters = ({ characters }) => {
+const Characters = () => {
+  const characters = useCharacters();
+  if(characters.length === 0) return <h1>Loading...</h1>;
+
   const characterElements = characters.map(character => {
     return (
       <li key={character.id}>
-        {character.id} - {character.name}
+        <figure>
+          <img src={character.image} />
+          <figcaption>{character.name} - {character.id}</figcaption>
+        </figure>
       </li>
     );
   });
 
   return (
-    <ul>
+    <ul className={styles.Characters}>
       {characterElements}
     </ul>
   );
@@ -20,7 +28,8 @@ const Characters = ({ characters }) => {
 Characters.propTypes = {
   characters: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string
   }))
 };
 

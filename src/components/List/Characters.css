@@ -1,0 +1,14 @@
+@import '../../styles/variables.css';
+
+.Characters {
+  padding: 0px;
+  img {
+    width: 200px;
+  }
+  li {
+    list-style: none;
+  }
+  figure {
+    margin: 16px;
+  }
+}
